@@ -1,0 +1,32 @@
+.formBox {
+  border: solid 1px black;
+  padding: 10px 0px 10px 10px;
+  margin: 0px 20% 0px 20%;
+  border-radius: 10px;
+  display: flex;
+}
+.boxHeader {
+  display: flex;
+  justify-content: space-between;
+}
+.box1 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 5fr));
+}
+.box2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.box3 {
+  display: grid;
+}
+.boxBD{
+    display: flex;
+}
+.dataTable {
+    margin: 0px 50px;
+}
+.select1{
+    display: flex;
+    margin: 20px 0px 0px 50px;
+}
