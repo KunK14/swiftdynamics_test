@@ -1,11 +1,10 @@
-import "./App.css";
 import { Button } from "antd";
-
+import './App.css'
 function App() {
   return (
-    <div>
-      <Button>page1</Button>
-      <Button>page2</Button>
+    <div className="home">
+      <Button className="btn-page" href="/test1">Test1</Button>
+      <Button className="btn-page" href="/test2">Test2</Button>
     </div>
   );
 }

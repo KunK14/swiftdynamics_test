@@ -1,0 +1,10 @@
+.home {
+    display: flex;
+    justify-content: center;
+    margin-top: 15rem;
+}
+.btn-page {
+    width: 20rem;
+    height: 10rem;
+    margin: 0px 40px;
+}

@@ -1,6 +1,7 @@
-import "./App.css";
+import "./test1.css";
 import React from "react";
-import { Button, Divider, Layout, Tag } from "antd";
+import { Button, Divider, Layout, Select, Tag } from "antd";
+import { useTranslation } from "react-i18next";
 
 const { Sider } = Layout;
 
@@ -11,6 +12,10 @@ const siderStyle: React.CSSProperties = {
 };
 
 function Test1() {
+  const [t, i18n] = useTranslation("global");
+  const changeLangclick = (value: string) => {
+    i18n.changeLanguage(value);
+  };
   const [shape, setShape] = React.useState<string[]>([
     "circle",
     "square",
@@ -78,26 +83,40 @@ function Test1() {
 
   return (
     <div className="">
-      <p>Layout & Style</p>
-      <div className="App">
+      <div className="boxHeader">
+        <h1>{t("test1.layoutAndStyle")}</h1>
+        <div>
+          <Select
+            style={{ width: 120 }}
+            defaultValue="en"
+            onChange={changeLangclick}
+            options={[
+              { value: "en", label: "en" },
+              { value: "th", label: "ไทย" },
+            ]}
+          />
+          <Button href="/">Home</Button>
+        </div>
+      </div>
+      <div className="boxContainer">
         <div className="btnBox">
           <Button className="btn" onClick={moveShapeBack}>
             <div className="left"></div>
           </Button>
-          <Tag className="tag1">Move shape</Tag>
+          <Tag className="tag1">{t("test1.moveShape")}</Tag>
         </div>
         <div className="btnBox">
           <Button className="btn-mid" onClick={handleMovePosition}>
             <div className="up"></div>
             <div className="down"></div>
           </Button>
-          <Tag className="tag2">Move position</Tag>
+          <Tag className="tag2">{t("test1.movePosition")}</Tag>
         </div>
         <div className="btnBox">
           <Button className="btn" onClick={moveShape}>
             <div className="right"></div>
           </Button>
-          <Tag className="tag1">Move shape</Tag>
+          <Tag className="tag1">{t("test1.moveShape")}</Tag>
         </div>
       </div>
       <Divider />

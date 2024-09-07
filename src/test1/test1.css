@@ -1,22 +1,35 @@
-.App {
+.boxContainer {
   display: flex;
   flex-direction: row;
-  justify-items: center;
+  justify-content: center;
+}
+.boxHeader {
+  display: flex;
+  justify-content: space-between;
 }
 .btnBox {
   display: grid;
+  justify-items: center;
 }
 .tag1 {
-  background-image: #6eda78;
+  background-color: #6eda78;
+  color: white;
   width: 85px;
   height: 20px;
   margin-top: -20px;
+  border: 1px solid #6eda78;
+  text-align: center;
+  border-radius: 25px;
 }
 .tag2 {
-  background-image: #6eda78;
+  background-color: #6eda78;
+  color: white;
   width: 90px;
   height: 20px;
   margin-top: -20px;
+  text-align: center;
+  border: 1px solid #6eda78;
+  border-radius: 25px;
 }
 .btn {
   width: 300px;
