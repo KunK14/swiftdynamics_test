@@ -25,6 +25,7 @@ import {
   selectDeleteFormData,
 } from "./slice/data.slice";
 import { useTranslation } from "react-i18next";
+import React from "react";
 
 interface Data1 {
   key: number;
@@ -96,6 +97,18 @@ function Test2() {
   const handleChangeMobile = (value: string) => {
     setMobileValue(value);
   };
+
+  const [submittable, setSubmittable] = React.useState<boolean>(false);
+
+  const values = Form.useWatch([], form);
+
+  React.useEffect(() => {
+    form
+      .validateFields({ validateOnly: true })
+      .then(() => setSubmittable(true))
+      .catch(() => setSubmittable(false));
+  }, [form, values]);
+
 
   const submitData = () => {
     form.validateFields().then((values) => {
@@ -284,7 +297,7 @@ function Test2() {
               name="title"
               className="grid-item"
               rules={[
-                { required: true, message: "Please input your username!" },
+                { required: true, message: "Please input your title!" },
               ]}
             >
               <Select placeholder="Title">
@@ -300,7 +313,7 @@ function Test2() {
               name="firstName"
               className="grid-item"
               rules={[
-                { required: true, message: "Please input your password!" },
+                { required: true, message: "Please input your firstName!" },
               ]}
             >
               <Input />
@@ -310,7 +323,7 @@ function Test2() {
               name="lastName"
               className="grid-item"
               rules={[
-                { required: true, message: "Please input your username!" },
+                { required: true, message: "Please input your lastName!" },
               ]}
             >
               <Input />
@@ -321,7 +334,7 @@ function Test2() {
               label={t("test2.birthDate")}
               name="birthDate"
               rules={[
-                { required: true, message: "Please input your username!" },
+                { required: true, message: "Please input your birthDate!" },
               ]}
             >
               <DatePicker />
@@ -330,7 +343,7 @@ function Test2() {
               label={t("test2.nationality")}
               name="nationality"
               rules={[
-                { required: true, message: "Please input your username!" },
+                { required: true, message: "Please input your nationality!" },
               ]}
             >
               <Select
@@ -495,7 +508,7 @@ function Test2() {
                 label={t("test2.expectedSalary")}
                 name="expectedSalary"
                 rules={[
-                  { required: true, message: "Please input your username!" },
+                  { required: true, message: "Please input your expected Salary!" },
                 ]}
               >
                 <Input />
@@ -512,7 +525,7 @@ function Test2() {
                 </Button>
               </Form.Item>
               <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                <Button type="default" htmlType="submit" onClick={submitData}>
+                <Button type="default" htmlType="submit" disabled={!submittable} onClick={submitData}>
                   {t("test2.button.submit")}
                 </Button>
               </Form.Item>
