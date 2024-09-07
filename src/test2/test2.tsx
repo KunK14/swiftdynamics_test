@@ -154,7 +154,7 @@ function Test2() {
         citizenID4: citizenID4,
         citizenID5: citizenID5,
         gender: item.gender,
-        mobilePhone: item.mobileCountry,
+        mobilePhoneCode: item.mobileCountry,
         mobileInput: item.mobilePhone,
         passportNo: item.passportNo,
         expectedSalary: item.expectedSalary,
@@ -276,8 +276,6 @@ function Test2() {
           form={form}
           name="dataForm"
           initialValues={{ remember: true }}
-          // onFinish={onFinish}
-          // onFinishFailed={onFinishFailed}
           autoComplete="off"
         >
           <div className="box1">
@@ -455,7 +453,7 @@ function Test2() {
             ]}
           >
             <div className="boxBD">
-              <Form.Item noStyle>
+              <Form.Item noStyle name="mobilePhoneCode">
                 <Select
                   style={{
                     width: "10rem",
@@ -544,7 +542,18 @@ function Test2() {
           dataSource={data}
           rowKey="key"
           showSorterTooltip={{ target: "sorter-icon" }}
-          pagination={{ position: [top] }}
+          pagination={{
+            position: [top],
+            itemRender: (page, type, originalElement) => {
+              if (type === "prev") {
+                return <a>{t("test2.button.prev")}</a>;
+              }
+              if (type === "next") {
+                return <a>{t("test2.button.next")}</a>;
+              }
+              return originalElement;
+            },
+          }}
         />
       </div>
     </div>

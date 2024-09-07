@@ -34,7 +34,10 @@ const formSlice = createSlice({
       saveToLocalStorage(newState);
       return newState;
     },
-    editFormData: (state, action: PayloadAction<{ index: number; newData: FormData }>) => {
+    editFormData: (
+      state,
+      action: PayloadAction<{ index: number; newData: FormData }>
+    ) => {
       const { index, newData } = action.payload;
       const newState = state.map((item, i) => (i === index ? newData : item));
       saveToLocalStorage(newState);
@@ -47,17 +50,24 @@ const formSlice = createSlice({
     },
     selectDeleteFormData: (state, action: PayloadAction<number[]>) => {
       const indicesToDelete = action.payload;
-      const newState = state.filter((_, index) => !indicesToDelete.includes(index));
+      const newState = state.filter(
+        (_, index) => !indicesToDelete.includes(index)
+      );
       saveToLocalStorage(newState);
       return newState;
     },
     clearFormData: () => {
-      localStorage.removeItem('formData')
-      return []
+      localStorage.removeItem("formData");
+      return [];
     },
-    
   },
-})
+});
 
-export const { addFormData,deleteFormData,editFormData,selectDeleteFormData,clearFormData} = formSlice.actions
-export default formSlice.reducer
+export const {
+  addFormData,
+  deleteFormData,
+  editFormData,
+  selectDeleteFormData,
+  clearFormData,
+} = formSlice.actions;
+export default formSlice.reducer;
