@@ -1,0 +1,42 @@
+{
+
+  "test1": {
+    "layoutAndStyle":"การจัดการหน้าเว็บ",
+    "moveShape":"เลื่อนรูปแบบ",
+    "movePosition":"เปลี่ยนตำแหน่ง"
+  },
+    "test2": {
+      "formAndTable": "การจัดการหน้าฟอร์ม",
+      "title": "คำนำหน้า",
+      "firstName": "ชื่อจริง",
+      "lastName": "นามสกุล",
+      "birthDate": "วันเกิด",
+      "nationality": "สัญชาติ",
+      "citizenID": "เลขบัตรประชาชน",
+      "gender": "เพศ",
+      "male": "ผู้ชาย",
+      "female": "ผู้หญิง",
+      "unisex": "ไม่ระบุ",
+      "mobilePhone": "หมายเลขโทรศัพท์มือถือ",
+      "passportNo": "หนังสือเดินทาง",
+      "expectedSalary": "เงินเดือนที่คาดหวัง",
+      "selectAll": "เลือกทั้งหมด",
+      "name": "ชื่อ",
+      "manage":"จัดการ",
+      "button": {
+        "reset": "ล้างข้อมูล",
+        "submit": "ส่งข้อมูล",
+        "delete": "ลบข้อมูล",
+        "edit": "แก้ไขข้อมูล"
+      },
+      "select": {
+        "mr":"นาย",
+        "mrs":"นาง",
+        "ms":"นางสาว",
+        "thai":"ไทย",
+        "french": "ฝรั่งเศษ",
+        "america":"อเมริกา"
+      }
+    }
+  
+}
